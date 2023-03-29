@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    /* light theme variables */
+    --mainTextColor-light: #000;
+    --secondaryTextColor-light: rgb(51, 51, 51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor: rgb(22, 21, 21);
+    --mainBgColor: rgb(249, 250, 251);
+
+
+    /* dark theme variables */
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #adb0b1;
+    --mainLinkColor-dark: rgb(30, 190, 214);
+    --mainBorderColor-dark: #2b3031;
+    --mainBgColor-dark: #131415;
+
+    --mainTextColor: var(--mainTextColor-light);
+    --secondaryTextColor: var(--secondaryTextColor-light);
+    --mainLinkColor: var(--mainLinkColor-light);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-light);
+}
+
+.change--theme {
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark);
+}
+
+* {
+    font-family: 'Readex Pro', sans-serif;
+    line-height: 2.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--mainBgColor);
+    padding-block: 2rem;
+}
+
+.hide {
+    display: none;
+}
+
+p, span, li {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+li {
+    line-height: 2.9em;
+}
+
+#container--main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section--page {
+    padding-block: 1em;
+}
+
+#wrapper--hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4em;
+}
+
+#content {
+    flex: 3;
+}
+
+img#profile_pic {
+    flex: 1;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#bio, a {
+    font-weight: 300;
+}
+
+#username {
+    font-size: 3rem;
+    line-height: 1rem;
+    padding-bottom: 2rem;
+}
+
+#email {
+    color: var(--mainTextColor);
+}
+
+.theme--toggle {
+    flex: 1;
+    padding: 2rem;
+}
+.theme--toggle i {
+    font-size: 2rem;
+}
+
+#socials--list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#socials--list a {
+    font-size: 1rem;
+    color: var(--secondaryTextColor);
+    transition: all 0.25s ease-in-out;
+}
+
+#socials--list a:hover {
+    color: var(--mainLinkColor);
+}
+
+#qualifications--list {
+    list-style: none;
+}
+
+.wrapper--techstack__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+.card--techstack {
+    border: 1px solid var(--mainBorderColor);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+.card--work-history {
+    border-left: 1px solid var(--mainBorderColor);
+    margin-block: 3rem;
+    padding-left: 2rem;
+}
+
+.line--break {
+    background-color: var(--mainBorderColor);
+    height: 1px;
+}
+.work--lists {
+   padding-left: 2rem;
+}
+
+.card--project {
+    padding-block: 1rem;
+    border-top: 1px solid var(--mainBorderColor);
+}
+
+.card--project a {
+    color: var(--mainTextColor);
+    transition: all .25s ease-in-out;
+}
+
+.card--project a:hover {
+    color: var(--mainLinkColor-light);
+}
+
+
+/* Responsive Media Queries */
+@media screen and (max-width: 900px) {
+    #wrapper--hero {
+        position: relative;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    img#profile_pic {
+        height: 100px;
+        width: 100px;
+    }
+
+    .theme--toggle {
+        position: absolute;
+        right: 0; top: 0;
+    }
+    #username {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
